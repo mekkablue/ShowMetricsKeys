@@ -1,7 +1,7 @@
 # ShowMetricKeys.glyphsReporter
 
 This is a plugin for the [Glyphs font editor](http://glyphsapp.com/) by Georg Seifert.
-It displays glyph-wide and layer-specific metrics keys at the baseline.
+It displays glyph-wide and layer-specific metrics keys a little bit below the baseline.
 
 ![Glyph and Layer Metrics Keys.](ShowMetricKeys.png "Show Metics Keys Screenshot")
 
@@ -22,10 +22,6 @@ You can set a keyboard shortcut in System Preferences.
 ### Requirements
 
 The plugin needs Glyphs 2.0 or higher, running on OS X 10.9.5 or later.
-
-### Known Issues
-
-I cannot get the right metrics keys to align properly. Sorry.
 
 ### License
 
