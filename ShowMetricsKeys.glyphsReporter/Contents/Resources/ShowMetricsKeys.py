@@ -99,7 +99,7 @@ class ShowMetricsKeys ( NSObject, GlyphsReporterProtocol ):
 			
 			layerLeftMetricsKey = Layer.leftMetricsKey()
 			layerRightMetricsKey = Layer.rightMetricsKey()
-			layerWidth = Layer.width
+			layerWidth = Layer.width + 5.0
 
 			leftMetricsKeyString = "Glyph: '%s'\nLayer: '%s'" % ( glyphLeftMetricsKey, layerLeftMetricsKey)
 			rightMetricsKeyString = "Glyph: '%s'\nLayer: '%s'" % ( glyphRightMetricsKey, layerRightMetricsKey)
@@ -107,10 +107,19 @@ class ShowMetricsKeys ( NSObject, GlyphsReporterProtocol ):
 			leftMetricsKeyString = leftMetricsKeyString.replace("'None'", "-")
 			rightMetricsKeyString = rightMetricsKeyString.replace("'None'", "-")
 			
-			# top left: 6, top center: 7, top right: 8, center left: 3, center center: 4, center right: 5, bottom left: 0, bottom center: 1, bottom right: 2
+			# Text Alignments:
+			# top left: 6
+			# top center: 7
+			# top right: 8
+			# center left: 3
+			# center center: 4
+			# center right: 5
+			# bottom left: 0
+			# bottom center: 1
+			# bottom right: 2
 			
-			self.drawTextAtPoint( leftMetricsKeyString, NSPoint(0.0,0.0), fontSize=9.0, textAlignment=8 )
-			self.drawTextAtPoint( rightMetricsKeyString, NSPoint(layerWidth,0.0), fontSize=9.0, textAlignment=6 )
+			self.drawTextAtPoint( leftMetricsKeyString, NSPoint( -5.0, -100.0 ), fontSize=9.0, textAlignment=2, fontColor=NSColor.orangeColor() )
+			self.drawTextAtPoint( rightMetricsKeyString, NSPoint( layerWidth, -100.0 ), fontSize=9.0, textAlignment=0, fontColor=NSColor.orangeColor() )
 		except Exception as e:
 			self.logToConsole( "drawForegroundForLayer_: %s" % str(e) )
 	
