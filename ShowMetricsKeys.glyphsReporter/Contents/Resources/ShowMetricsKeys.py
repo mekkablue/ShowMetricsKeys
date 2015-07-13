@@ -4,7 +4,7 @@
 import objc
 from Foundation import *
 from AppKit import *
-import sys, os, re
+import sys, os, re, math
 
 MainBundle = NSBundle.mainBundle()
 path = MainBundle.bundlePath() + "/Contents/Scripts"
@@ -94,12 +94,21 @@ class ShowMetricsKeys ( NSObject, GlyphsReporterProtocol ):
 		"""
 		try:
 			thisGlyph = Layer.parent
+			Font = thisGlyph.parent
+
+			xHeight = Font.selectedFontMaster.xHeight
+			angle = Font.selectedFontMaster.italicAngle
+			yPos = -100
+			# rotation point is half of x-height
+			offset = math.tan(math.radians(angle)) * xHeight/2
+			shift = math.tan(math.radians(angle)) * yPos - offset
+
 			glyphLeftMetricsKey = thisGlyph.leftMetricsKey
 			glyphRightMetricsKey = thisGlyph.rightMetricsKey
 			
 			layerLeftMetricsKey = Layer.leftMetricsKey()
 			layerRightMetricsKey = Layer.rightMetricsKey()
-			layerWidth = Layer.width + 5.0
+			layerWidth = Layer.width + 10.0
 
 			leftMetricsKeyString = "Glyph: '%s'\nLayer: '%s'" % ( glyphLeftMetricsKey, layerLeftMetricsKey)
 			rightMetricsKeyString = "Glyph: '%s'\nLayer: '%s'" % ( glyphRightMetricsKey, layerRightMetricsKey)
@@ -117,9 +126,9 @@ class ShowMetricsKeys ( NSObject, GlyphsReporterProtocol ):
 			# bottom left: 0
 			# bottom center: 1
 			# bottom right: 2
-			
-			self.drawTextAtPoint( leftMetricsKeyString, NSPoint( -5.0, -100.0 ), fontSize=9.0, textAlignment=2, fontColor=NSColor.orangeColor() )
-			self.drawTextAtPoint( rightMetricsKeyString, NSPoint( layerWidth, -100.0 ), fontSize=9.0, textAlignment=0, fontColor=NSColor.orangeColor() )
+
+			self.drawTextAtPoint( leftMetricsKeyString, NSPoint( -10.0 + shift, yPos), fontSize=9.0, textAlignment=2, fontColor=NSColor.orangeColor() )
+			self.drawTextAtPoint( rightMetricsKeyString, NSPoint( layerWidth + shift, yPos), fontSize=9.0, textAlignment=0, fontColor=NSColor.orangeColor() )
 		except Exception as e:
 			self.logToConsole( "drawForegroundForLayer_: %s" % str(e) )
 	
