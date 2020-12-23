@@ -16,16 +16,10 @@
 	<string>ShowMetricsKeys</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleVersion</key>
-	<string>3</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
-	<key>UpdateFeedURL</key>
-	<string>https://raw.githubusercontent.com/mekkablue/ShowMetricsKeys/master/ShowMetricsKeys.glyphsReporter/Contents/Info.plist</string>
-	<key>productPageURL</key>
-	<string>https://github.com/mekkablue/ShowMetricsKeys</string>
-	<key>productReleaseNotes</key>
-	<string>update API</string>
+	<string>1.0.3</string>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Rainer Erich Scheichelbauer, 2018</string>
 	<key>NSPrincipalClass</key>
@@ -34,5 +28,11 @@
 	<array>
 		<string>../MacOS/main.py</string>
 	</array>
+	<key>UpdateFeedURL</key>
+	<string>https://raw.githubusercontent.com/mekkablue/ShowMetricsKeys/master/ShowMetricsKeys.glyphsReporter/Contents/Info.plist</string>
+	<key>productPageURL</key>
+	<string>https://github.com/mekkablue/ShowMetricsKeys</string>
+	<key>productReleaseNotes</key>
+	<string>update binary files for Glyphs3</string>
 </dict>
 </plist>
