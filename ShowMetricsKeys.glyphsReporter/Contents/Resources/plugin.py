@@ -4,12 +4,15 @@ import objc
 import sys, os, re, math, traceback
 from GlyphsApp import *
 from GlyphsApp.plugins import *
+from AppKit import NSPoint, NSColor
 
 class ShowMetricsKeys (ReporterPlugin):
 
+	@objc.python_method
 	def settings(self):
 		self.menuName = "Metrics Keys"
 	
+	@objc.python_method
 	def foreground( self, Layer ):
 		"""
 		Whatever you draw here will be displayed IN FRONT OF the paths.
