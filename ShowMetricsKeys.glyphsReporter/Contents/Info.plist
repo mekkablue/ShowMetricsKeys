@@ -13,9 +13,9 @@
 	<key>CFBundleName</key>
 	<string>ShowMetricsKeys</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.5</string>
+	<string>1.0.6</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/ShowMetricsKeys/master/ShowMetricsKeys.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
