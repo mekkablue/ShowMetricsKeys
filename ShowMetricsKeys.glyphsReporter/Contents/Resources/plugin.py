@@ -1,9 +1,8 @@
 # encoding: utf-8
 
 import objc
-import sys, os, re, math, traceback
-from GlyphsApp import *
-from GlyphsApp.plugins import *
+import math
+from GlyphsApp.plugins import ReporterPlugin
 from AppKit import NSPoint, NSColor
 
 class ShowMetricsKeys (ReporterPlugin):
